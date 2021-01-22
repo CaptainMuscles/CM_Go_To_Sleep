@@ -7,7 +7,9 @@
 	<supportedVersions>
 		<li>1.2</li>
 	</supportedVersions>
-	<description>Adds the ability to command a pawn to sleep outside of scheduled sleep hours.</description>
+	<description>Do your pawns have a big fight or caravan trip to rest up for? Want them to rest up without having to change the schedule and make it happen indirectly? Wouldn't it be easier if you could just tell them to GO THE F*** TO SLEEP?
+	
+	This mod adds the ability to command a pawn to sleep outside of scheduled sleep hours.</description>
 	<modDependencies>
 		<li>
 			<packageId>brrainz.harmony</packageId>
