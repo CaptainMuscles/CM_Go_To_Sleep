@@ -19,12 +19,16 @@ namespace CM_Go_To_Sleep
             [HarmonyPostfix]
             public static void Postfix(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts)
             {
-                if (pawn.needs == null || pawn.needs.rest == null || pawn.needs.rest.CurLevel > RestUtility.FallAsleepMaxLevel(pawn))
+                if (pawn.needs == null || pawn.needs.rest == null)
                     return;
 
                 foreach (LocalTargetInfo bed in GenUI.TargetsAt_NewTemp(clickPos, ForSleeping(pawn), thingsOnly: true))
                 {
-                    if (!pawn.CanReach(bed, PathEndMode.OnCell, Danger.Deadly))
+                    if (pawn.needs.rest.CurLevel > RestUtility.FallAsleepMaxLevel(pawn))
+                    {
+                        opts.Add(new FloatMenuOption("CM_Go_To_Sleep_Cannot_Sleep".Translate() + ": " + "CM_Go_To_Sleep_Not_Tired".Translate().CapitalizeFirst(), null));
+                    }
+                    else if (!pawn.CanReach(bed, PathEndMode.OnCell, Danger.Deadly))
                     {
                         opts.Add(new FloatMenuOption("CM_Go_To_Sleep_Cannot_Sleep".Translate() + ": " + "NoPath".Translate().CapitalizeFirst(), null));
                     }
