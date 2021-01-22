@@ -28,7 +28,7 @@ namespace CM_Go_To_Sleep
                     {
                         opts.Add(new FloatMenuOption("CM_Go_To_Sleep_Cannot_Sleep".Translate() + ": " + "NoPath".Translate().CapitalizeFirst(), null));
                     }
-                    else if (bed.Thing.Map.designationManager.DesignationOn(bed.Thing, DesignationDefOf.Open) == null)
+                    else
                     {
                         opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("CM_Go_To_Sleep_GoToSleep".Translate(), delegate
                         {
