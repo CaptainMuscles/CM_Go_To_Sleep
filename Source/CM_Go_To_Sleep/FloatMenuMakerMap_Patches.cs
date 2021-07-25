@@ -22,7 +22,7 @@ namespace CM_Go_To_Sleep
                 if (pawn.needs == null || pawn.needs.rest == null)
                     return;
 
-                foreach (LocalTargetInfo bed in GenUI.TargetsAt_NewTemp(clickPos, ForSleeping(pawn), thingsOnly: true))
+                foreach (LocalTargetInfo bed in GenUI.TargetsAt(clickPos, ForSleeping(pawn), thingsOnly: true))
                 {
                     if (pawn.needs.rest.CurLevel > RestUtility.FallAsleepMaxLevel(pawn))
                     {
